@@ -60,6 +60,10 @@ func main() {
 	do(1)
 	do(2)
 	do(3)
+
+	// Defer
+	x1 := doDefer()
+	fmt.Println(x1)
 }
 
 func takeBite(b byte) {
@@ -86,4 +90,11 @@ func isWeekend(x time.Time) bool {
 	default:
 		return true
 	}
+}
+
+func doDefer() int {
+	defer fmt.Println("World")
+	fmt.Println("Hello defer")
+
+	return 10
 }
