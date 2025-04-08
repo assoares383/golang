@@ -10,12 +10,26 @@ type User struct {
 	ID   uint64 `json:"id"`
 }
 
+type Animal interface {
+	Sound() string
+}
+
+type Dog struct{}
+
 func (u User) PrintName() {
 	fmt.Println(u.Name)
 }
 
 func (u *User) UpdateName(newName string) {
 	u.Name = newName
+}
+
+type Person struct {
+	Name string
+}
+
+func (p Person) Greet() {
+	fmt.Println("Hello, my name is", p.Name)
 }
 
 func main() {
@@ -37,4 +51,18 @@ func main() {
 	}
 
 	fmt.Println(string(res))
+
+	dog := Dog{}
+	whatDoesThisAnimalSay(dog)
+
+	p := Person{Name: "Alice"}
+	p.Greet()
+}
+
+func (Dog) Sound() string {
+	return "Au! Au!"
+}
+
+func whatDoesThisAnimalSay(a Animal) {
+	fmt.Println(a.Sound())
 }
