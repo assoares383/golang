@@ -1,4 +1,4 @@
-module example.com/m/2
+module encurtador-url
 
 go 1.24.1
 

@@ -23,7 +23,7 @@ func run() error {
 
 	s := http.Server{
 		ReadTimeout:  10 * time.Second,
-		IdleTimeout:  time.Second,
+		IdleTimeout:  time.Minute,
 		WriteTimeout: 10 * time.Second,
 		Addr:         ":8080",
 		Handler:      hander,
