@@ -46,5 +46,4 @@ func main() {
 	}
 
 	fmt.Println("%#+v\n", res)
-	fmt.Println("Connected to MySQL database")
 }
